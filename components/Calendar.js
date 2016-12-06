@@ -204,6 +204,8 @@ export default class Calendar extends Component {
         days.push(<Day key={`${renderIndex}`} filler customStyle={this.props.customStyle} />);
       }
       if (renderIndex % 7 === 6 && days !== []) {
+        console.log("-----days-----")
+        console.log(days)
         weekRows.push(
           <View
             key={weekRows.length}
@@ -219,6 +221,8 @@ export default class Calendar extends Component {
       renderIndex += 1;
     } while (true)
     const containerStyle = [styles.monthContainer, this.props.customStyle.monthContainer];
+        console.log("-----rows-----")
+        console.log(weekRows)
     return <View key={argMoment.month()} style={containerStyle}>{weekRows}</View>;
   }
 
