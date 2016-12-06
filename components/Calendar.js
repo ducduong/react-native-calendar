@@ -76,7 +76,7 @@ export default class Calendar extends Component {
   componentDidUpdate() {
     this.scrollToItem(VIEW_INDEX);
   }
-  
+
   componentWillReceiveProps(props) {
     if (props.selectedDate) {
       this.setState({selectedMoment: props.selectedDate});
@@ -203,7 +203,7 @@ export default class Calendar extends Component {
       } else {
         days.push(<Day key={`${renderIndex}`} filler customStyle={this.props.customStyle} />);
       }
-      if (renderIndex % 7 === 6) {
+      if (renderIndex % 7 === 6 && days !== []) {
         weekRows.push(
           <View
             key={weekRows.length}
